@@ -28,6 +28,7 @@ To build a resilient infrastructure that ensures:
 
 ## 🧱 Architecture
 
+![Architecture Diagram](architecture.png)
 
 ---
 

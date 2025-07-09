@@ -1,28 +1,29 @@
 # 🌐 AWS Disaster Management Project
 
-This project demonstrates a **highly available, fault-tolerant static web application** hosted on AWS, using **Terraform** to provision infrastructure as code.
+This project demonstrates a **highly available**, **fault-tolerant** static web application hosted on **AWS**, using **Terraform** to provision all infrastructure as code.
 
 ---
 
 ## 🎯 Objective
 
 To build a resilient infrastructure that ensures:
-- Automated **failover routing** between EC2 instances
-- **Health checks** for monitoring instance status
-- Hosting a **static website** from **EC2** and **S3**
-- Managing **DNS with Route 53**
-- Using **Amazon RDS** as a secure relational database backend
+
+- 🔁 Automated failover routing between EC2 instances  
+- 🩺 Health checks for monitoring instance status  
+- 🖥️ Hosting a static website using EC2 and S3  
+- 🌐 DNS management with Route 53  
+- 🛢️ Amazon RDS as a secure MySQL backend database  
 
 ---
 
 ## 🛠️ Technologies Used
 
-- Terraform
-- AWS EC2 (Primary & Secondary Instances)
-- AWS Route 53
-- Amazon RDS (MySQL)
-- Amazon S3 (Static assets)
-- Git & GitHub
+- Terraform  
+- AWS EC2 (Primary & Secondary Instances)  
+- Amazon Route 53  
+- Amazon S3 (for static backup)  
+- Amazon RDS (MySQL)  
+- Git & GitHub  
 
 ---
 
@@ -35,17 +36,21 @@ To build a resilient infrastructure that ensures:
 ## 📁 Directory Structure
 
 Disaster-Management/
-├── main.tf
-├── vpc.tf
-├── ec2.tf
-├── alb.tf
-├── route53.tf
-├── rds.tf
-├── variables.tf
-├── outputs.tf
-├── index.html
-├── Styles.css
 ├── .gitignore
+├── architecture.png
+├── ec2.tf
+├── outputs.tf
+├── rds.tf
+├── replication.tf
+├── route53.tf
+├── s3.tf
+├── vpc.tf
+├── html/
+│ ├── index.html
+│ ├── Styles.css
+│ ├── Logo.png
+│ └── other-assets
+└── README.md
 
 yaml
 Copy
@@ -55,27 +60,28 @@ Edit
 
 ## ☁️ Features
 
-- ✅ EC2 with Apache hosting static website
-- ✅ S3 for serving static content to EC2
-- ✅ Route 53 DNS Failover using health checks
-- ✅ RDS MySQL DB for storing backend data
-- ✅ Infrastructure fully managed via Terraform
+✅ EC2 with Apache hosting static website  
+✅ S3 backup for static content (failover access)  
+✅ Route 53 DNS failover using health checks  
+✅ RDS MySQL for backend database storage  
+✅ Fully automated with Terraform  
 
 ---
 
 ## 🌐 Domain
 
 Website hosted at:  
-🔗 **[https://dineshprojectsmine.shop](https://dineshprojectsmine.shop)**
+🔗 [https://dineshprojectsmine.shop](https://dineshprojectsmine.shop)
 
 ---
 
 ## 🚀 Deployment Guide
 
 ### 1️⃣ Initialize Terraform
+
 ```bash
 terraform init
-2️⃣ Validate and Plan
+2️⃣ Validate & Plan
 bash
 Copy
 Edit
@@ -86,12 +92,12 @@ bash
 Copy
 Edit
 terraform apply
-4️⃣ Update DNS
-via Terraform, point your Route 53 records to:
+4️⃣ Update DNS via Route 53
+Terraform manages failover routing by pointing:
 
-EC2 Primary (A Record + Health Check)
+✅ Primary EC2 → A Record + Health Check
 
-EC2 Secondary (Failover A Record)
+✅ Secondary EC2 → A Record (Failover)
 
 🔒 .gitignore Includes
 bash
@@ -102,28 +108,25 @@ Edit
 *.tfstate
 *.tfstate.backup
 
-# AWS credentials
+# AWS Credentials
 *.pem
 
-# System files
+# System Files
 .DS_Store
+__MACOSX/
 
-# IDE
+# IDE Config
 .vscode/
 .idea/
-__MACOSX/
 📚 Future Scope
-Add CI/CD (GitHub Actions)
+🔄 Add CI/CD pipelines using GitHub Actions
 
-Use CloudFront CDN with S3
+🌍 Use CloudFront CDN with S3
 
-Enable RDS backups and encryption
+🔐 Enable RDS snapshots, encryption & backups
 
-Add CloudWatch alarms and dashboards
+📊 Integrate CloudWatch for monitoring & alarms
 
 👨‍💻 Author
 Dinesh Kumar Kasi
 GitHub: @dineshkumarkasi
-
-
-

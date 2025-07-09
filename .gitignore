@@ -1,0 +1,15 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# AWS credentials
+*.pem
+
+# System files
+.DS_Store
+__MACOSX/
+
+# Editor configs
+.vscode/
+.idea/

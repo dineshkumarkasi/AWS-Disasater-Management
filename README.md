@@ -99,25 +99,7 @@ Terraform manages failover routing by pointing:
 
 ✅ Secondary EC2 → A Record (Failover)
 
-🔒 .gitignore Includes
-bash
-Copy
-Edit
-# Terraform
-.terraform/
-*.tfstate
-*.tfstate.backup
 
-# AWS Credentials
-*.pem
-
-# System Files
-.DS_Store
-__MACOSX/
-
-# IDE Config
-.vscode/
-.idea/
 📚 Future Scope
 🔄 Add CI/CD pipelines using GitHub Actions
 
